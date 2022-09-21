@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import QRCode from "react-qr-code";
 
 const App = () => {
   const [no, setNo] = useState("");
@@ -7,10 +8,8 @@ const App = () => {
 
   const SubmitHandler = (e) => {
     e.preventDefault();
-    const encodeURIURL = encodeURIComponent(msg);
-    setLink(`https://wa.me/${no}?text=${encodeURIURL}`);
-    console.log(link);
-    console.log(encodeURIURL);
+    const encodedMsg = encodeURIComponent(msg.trim());
+    setLink(`https://wa.me/${no}?text=${encodedMsg}`);
     setNo("");
     setMsg("");
   };
@@ -68,13 +67,24 @@ const App = () => {
             >
               Generate
             </button>
-
-            <a href={link} target="_blank" rel="noreferrer">
-              {link}
-            </a>
           </div>
         </form>
       </div>
+
+      {link && (
+        <div>
+          <a href={link} target="_blank" rel="noreferrer">
+            {link}
+          </a>
+          <QRCode
+            title="GeeksForGeeks"
+            value={link}
+            bgColor="white"
+            fgColor="#128c7e"
+            size={200}
+          />
+        </div>
+      )}
     </div>
   );
 };
