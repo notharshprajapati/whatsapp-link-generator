@@ -26,7 +26,7 @@ const From = () => {
     <div>
       <div className="pt-10 pb-10 ">
         <div className="ml-auto mr-auto grid grid-cols-2 ">
-          <div className="w-full max-w-xl ml-10 mt-10">
+          <div className="w-full max-w-xl">
             <form
               onSubmit={SubmitHandler}
               className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4"
