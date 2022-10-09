@@ -1,16 +1,22 @@
 import React from "react";
-import Intro from "./Intro";
-import Form from "./Form";
-import Example from "./Example";
-import How from "./How";
+import Navbar from "./component/Navbar";
+import Intro from "./page/Intro";
+import How from "./page/How";
+import From from "./page/Form";
+// import Example from "./page/Example";
+import Question from "./page/Question";
+import Footer from "./component/Footer";
 
 const App = () => {
   return (
     <div>
+      <Navbar />
       <Intro />
       <How />
-      <Form />
-      <Example />
+      <From />
+      {/* <Example /> */}
+      <Question />
+      <Footer />
     </div>
   );
 };
